@@ -1,0 +1,23 @@
+
+<div class="mb-4 flex rounded-full border-2 border-gray-600 overflow-hidden">
+  <input class="flex-grow py-1 px-2 outline-none focus:shadow-outline focus:bg-blue-100" type="search" />
+  <button class="px-4 bg-gray-600 text-white">
+    Search
+  </button>
+</div>
+
+<% 5.times.each do %>
+  <%= render 'profile' %>
+<% end %>
+
+<nav class="mt-12">
+  <ul class="flex justify-center">
+    <li><a class="border-2 border-gray-500 p-3 rounded-l hover:bg-gray-400" href="#">Previous</a></li>
+    <li><a class="border-2 border-gray-500 border-l-0 border-r-0 p-3 bg-gray-400 hover:bg-gray-400" href="#">1</a></li>
+    <li><a class="border-2 border-gray-500 border-l-0 border-r-0 p-3 hover:bg-gray-400" href="#">2</a></li>
+    <li><a class="border-2 border-gray-500 border-l-0 border-r-0 p-3 hover:bg-gray-400" href="#">3</a></li>
+    <li><a class="border-2 border-gray-500 border-l-0 border-r-0 p-3 hover:bg-gray-400" href="#">4</a></li>
+    <li><a class="border-2 border-gray-500 border-l-0 border-r-0 p-3 hover:bg-gray-400" href="#">5</a></li>
+    <li><a class="border-2 border-gray-500 p-3 rounded-r hover:bg-gray-400" href="#">Next</a></li>
+  </ul>
+</nav>

@@ -1,0 +1,34 @@
+<div onclick="location.href=#" class="block shadow-md mb-6 rounded overflow-hidden bg-white cursor-pointer">
+  <div class="flex">
+    <% if false %>
+      <div class="w-18" ><img src="https://s.gravatar.com/avatar/11a2c89f60d234faa569b93242ab4902?s=80&r=g" class="" /></div>
+    <% end %>
+
+    <div class="m-2 flex-grow">
+      <div class="flex">
+        <div class="">Jonathan Bennett</div>
+
+        <div class="ml-auto">
+          <a href="tel:5194668481">
+            <i class="fa fa-phone" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:#">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="my-4">description</div>
+      
+      <div class="flex items-baseline">
+        <% 5.times.each do |i| %>
+          <a href="/tags/<%= i %>" class="bg-gray-100 border-2 border-gray-400 rounded-full py-1 px-4 mr-1">tags</a>
+        <% end %>
+
+        <div class="ml-auto">
+          <div class="px-4 py-1 bg-red-400 text-white">Contract</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
