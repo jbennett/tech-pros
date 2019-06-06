@@ -1,14 +1,16 @@
-<div onclick="location.href=#" class="block shadow-md mb-6 rounded overflow-hidden bg-white cursor-pointer">
+<div xonclick="location.href=#" class="block shadow-md mb-6 rounded overflow-hidden bg-white">
   <div class="flex flex-col">
-    <h2 class="mt-2 text-xl text-center font-bold"><%= profile.name %></h2>
+    <div class="flex justify-center items-center">
+      <h2 class="mt-2 text-xl font-bold"><%= profile.name %></h2>
+
+      <%= content_tag :div, profile.looking_for, class: 'ml-2 px-2 py-1 rounded-full bg-gray-400 text-xs text-gray-800' unless profile.looking_for.blank? %>
+    </div>
 
     <%= content_tag :div, profile.short_description, class: 'mx-2 my-4' unless profile.short_description.blank? %>
     
     <% unless profile.tags.blank? && profile.looking_for.blank? %>
-      <div class="mx-2 mt-4 mb-2 flex items-baseline">
+      <div class="mx-2 mt-4 mb-2 flex items-baseline justify-center">
         <%= render partial: 'tag', collection: profile.tags %>
-
-        <%= content_tag :div, profile.looking_for, class: 'ml-auto px-4 py-1 bg-red-400 text-white' unless profile.looking_for.blank? %>
       </div>
     <% end %>
 
