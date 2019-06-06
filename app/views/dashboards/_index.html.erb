@@ -1,0 +1,4 @@
+<%= render 'search' %>
+<%= render partial: 'entity', collection: @entities %>
+<%= content_tag :div, t('.no_entries'), class: 'text-center' if @entities.blank? %>
+<%= will_paginate @entities %>

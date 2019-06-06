@@ -1,9 +1,1 @@
-
-<%= form_with class: 'mb-8 flex rounded-full border-2 border-gray-600 overflow-hidden', method: :get do |f| %>
-  <%= text_field nil, :search, class: 'flex-grow py-1 px-2 outline-none focus:shadow-outline focus:bg-blue-100', value: params[:search] %>
-  <%= f.button 'Search', class: 'px-4 bg-gray-600 text-white' %>
-<% end %>
-
-<%= render partial: 'entity', collection: @entities %>
-<%= content_tag :div, t('.no_entries'), class: 'text-center' if @entities.blank? %>
-<%= will_paginate @entities %>
+<%= render 'index' %>
