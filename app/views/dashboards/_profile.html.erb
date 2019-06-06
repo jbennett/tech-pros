@@ -6,28 +6,27 @@
 
     <div class="m-2 flex-grow">
       <div class="flex">
-        <div class="">Jonathan Bennett</div>
+        <div class=""><%= profile.name %></div>
 
         <div class="ml-auto">
-          <a href="tel:5194668481">
-            <i class="fa fa-phone" aria-hidden="true"></i>
-          </a>
-          <a href="mailto:#">
-            <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          </a>
+          <% profile.contact_methods.each do |contact| %>
+            <%= render partial: "contact_#{contact["type"]}", locals: { contact: contact } %>
+          <% end %>
         </div>
       </div>
 
-      <div class="my-4">description</div>
+      <%= content_tag :div, profile.short_description, class: 'my-4' unless profile.short_description.blank? %>
       
-      <div class="flex items-baseline">
-        <% 5.times.each do |i| %>
-          <a href="/tags/<%= i %>" class="bg-gray-100 border-2 border-gray-400 rounded-full py-1 px-4 mr-1">tags</a>
+      <div class="mt-3 flex items-baseline">
+        <% profile.tags.each do |tag| %>
+          <a href="/tags/<%= tag %>" class="bg-gray-100 border-2 border-gray-400 rounded-full py-1 px-4 mr-1"><%= tag %></a>
         <% end %>
 
-        <div class="ml-auto">
-          <div class="px-4 py-1 bg-red-400 text-white">Contract</div>
-        </div>
+        <% if profile.looking_for.present? %>
+          <div class="ml-auto">
+            <div class="px-4 py-1 bg-red-400 text-white"><%= profile.looking_for %></div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

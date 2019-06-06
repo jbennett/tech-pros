@@ -6,9 +6,7 @@
   </button>
 </div>
 
-<% 5.times.each do %>
-  <%= render 'profile' %>
-<% end %>
+  <%= render partial: 'entity', collection: @entities  %>
 
 <nav class="mt-12">
   <ul class="flex justify-center">
