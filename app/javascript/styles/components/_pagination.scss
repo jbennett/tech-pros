@@ -1,0 +1,32 @@
+.pagination {
+  @apply flex justify-center;
+
+  a,
+  em,
+  span {
+    @apply block border-t-2 border-b-2 border-gray-500 p-3;
+  }
+
+  .disabled {
+    @apply text-gray-500;
+  }
+
+  .previous_page,
+  .next_page {
+    @apply border-l-2 border-r-2;
+  }
+
+  .previous_page {
+    @apply rounded-l;
+  }
+
+  .next_page {
+    @apply rounded-r;
+  }
+
+  .current,
+  a:hover,
+  a:focus {
+    @apply bg-gray-400;
+  }
+}
