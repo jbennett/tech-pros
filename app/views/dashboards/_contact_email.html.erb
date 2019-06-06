@@ -1,4 +1,4 @@
-<a href="mailto:<%= contact["data"] %>">
-  <i class="fa fa-envelope-o" aria-hidden="true"></i>
+<a href="mailto:<%= contact["data"] %>" class="flex-grow px-4 py-2 bg-gray-700 text-white text-center <%= 'ml-px' unless contact_counter == 0 %>">
+  <i class="fa fa-envelope-o mr-2" aria-hidden="true"></i>
   <%= contact["data"] %>
 </a>
