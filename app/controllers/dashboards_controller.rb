@@ -1,7 +1,9 @@
 class DashboardsController < ApplicationController
 
   def index
-    @entities = Entity.all.default_sorting.paginate(page: params[:page])
+    @entities = Entity.default_sorting
+    @entities = @entities.search(params[:search]) unless params[:search].blank?
+    @entities = @entities.paginate(page: params[:page])
   end
 
 end
