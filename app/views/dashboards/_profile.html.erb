@@ -6,9 +6,9 @@
       <%= content_tag :div, profile.looking_for, class: 'ml-2 px-2 py-1 rounded-full bg-gray-400 text-xs text-gray-800' unless profile.looking_for.blank? %>
     </div>
 
-    <%= content_tag :div, profile.short_description, class: 'mx-2 my-4' unless profile.short_description.blank? %>
+    <%= content_tag :div, profile.short_description, class: 'mx-4 my-4' unless profile.short_description.blank? %>
     
-    <% unless profile.tags.blank? && profile.looking_for.blank? %>
+    <% unless profile.tags.blank? %>
       <div class="mx-2 mt-4 mb-2 flex items-baseline justify-center">
         <%= render partial: 'tag', collection: profile.tags %>
       </div>
