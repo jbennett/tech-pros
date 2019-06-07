@@ -1,0 +1,11 @@
+<% content_for :title_text do %>
+  <%= @profile.name %>
+<% end %>
+
+<div class=""><%= @profile.long_description %></div>
+
+<% unless @profile.tags.blank? %>
+  <div class="mx-2 mt-4 mb-3 flex flex-wrap items-baseline justify-center">
+    <%= render partial: 'dashboards/tag', collection: @profile.tags %>
+  </div>
+<% end %>
