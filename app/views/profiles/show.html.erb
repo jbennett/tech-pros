@@ -1,13 +1,49 @@
-<% content_for :title_text do %>
+<% content_for :xtitle_text do %>
   <%= @profile.name %>
 <% end %>
 
-<p class="-mt-4 mb-4 text-blue-400"><%= link_to 'Back Home', root_path %></p>
 
-<div class=""><%= @profile.long_description %></div>
+<div class="flex">
+  <div class="">
+    <nav>
+      <ul class="bg-white rounded mr-4 px-4 py-2 shadow-md">
+        <li class="mb-3"><a href="" class="text-lg font-bold whitespace-no-wrap"><%= @profile.name %></a></li>
 
-<% unless @profile.tags.blank? %>
-  <div class="mx-2 mt-4 mb-3 flex flex-wrap items-baseline justify-center">
-    <%= render partial: 'dashboards/tag', collection: @profile.tags %>
+        <% unless @profile.contact_methods.blank? %>
+          <%= render partial: 'contact', collection: @profile.contact_methods %>
+        <% end %>
+      </ul>
+
+      <h2 class="text-lg font-bold mt-8 mb-2">Resources</h2>
+
+      <ul>
+        <% ['Security best practices', 'Identifying Technical Risk', 'Safe Spreadsheeting', '7 Ways to Maximize Your Tech'].each do |title| %>
+          <li><a href="#" class="text-blue-400"><%= title %></a><li>
+        <% end %>
+      </ul>
+    </nav>
   </div>
-<% end %>
+
+  <div class="">
+    <%= @profile.long_description %>
+
+    <% unless @profile.tags.blank? %>
+      <div class="mt-4 mb-3 flex flex-wrap items-baseline  ">
+        <%= render partial: 'dashboards/tag', collection: @profile.tags %>
+      </div>
+    <% end %>
+
+    <% unless false %>
+      <h2 class="text-lg font-bold mt-8 mb-2">Experiences</h2>
+
+      <% 3.times.each do %>
+        <div class="mb-4">
+          <h3 class="text-lg font-bold">Acme Inc</h3>
+          <div class="text-sm">June 2015&ndash;Sept 2017</div>
+          <div class="text-sm">VP of TNT</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis voluptates eaque odio neque quaerat sapiente ex ea architecto.</div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
